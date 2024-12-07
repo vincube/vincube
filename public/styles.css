@@ -5,36 +5,34 @@ body {
     text-align: center;
     color: #333;
     background-color: #f5f5f5;
-    overflow-x: hidden; /* Убираем горизонтальный скролл */
 }
 
 header {
-    padding: 15px 20px;
+    padding: 10px 15px;
     background-color: #007BFF;
     color: white;
     display: flex;
-    justify-content: flex-end; /* Выравнивание содержимого по правому краю */
+    justify-content: flex-end;
     align-items: center;
 }
 
 .header-content {
     display: flex;
     align-items: center;
-    gap: 15px; /* Отступ между элементами */
+    gap: 10px; /* Отступ между элементами */
 }
 
 header span {
-    font-size: 18px;
+    font-size: 16px;
     font-weight: bold;
-    margin-right: 10px; /* Дополнительный отступ справа */
 }
 
 .btn {
-    padding: 10px 20px;
-    font-size: 16px;
+    padding: 8px 12px;
+    font-size: 14px;
     cursor: pointer;
     border: none;
-    border-radius: 5px;
+    border-radius: 4px;
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
@@ -58,16 +56,17 @@ header span {
 
 /* Навигация */
 .navbar {
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     background-color: #333;
-    padding: 10px;
+    padding: 8px;
 }
 
 .nav-btn {
     background-color: transparent;
     color: white;
     text-decoration: none;
-    margin: 0 10px;
+    margin: 0 8px;
+    font-size: 14px;
 }
 
 .nav-btn:hover {
@@ -76,42 +75,42 @@ header span {
 
 /* Формы */
 .form-container {
-    width: 90%;
-    max-width: 500px;
-    margin: 0 auto 20px auto;
-    padding: 20px;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto 15px auto;
+    padding: 15px;
     background: white;
-    border-radius: 10px;
+    border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .form-group {
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     text-align: left;
 }
 
 input[type="text"], input[type="password"], input[type="datetime-local"], input[type="number"] {
-    width: 100%;
-    padding: 10px;
-    font-size: 16px;
-    margin-top: 10px;
+    width: 95%;
+    padding: 8px;
+    font-size: 14px;
+    margin-top: 5px;
     border: 1px solid #ddd;
-    border-radius: 5px;
+    border-radius: 4px;
 }
 
 input[type="checkbox"] {
-    transform: scale(1.5);
-    margin-right: 10px;
+    transform: scale(1.2);
+    margin-right: 8px;
 }
 
 /* Таблицы */
 .table-container {
     width: 100%;
     max-width: 1000px;
-    margin: 20px auto;
+    margin: 15px auto;
     overflow-x: auto;
-    background-color: white; /* Фон таблицы белый */
-    border-radius: 5px;
+    background-color: white;
+    border-radius: 4px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
@@ -124,53 +123,55 @@ th, td {
     padding: 10px;
     text-align: left;
     border: 1px solid #ddd;
-    word-wrap: break-word; /* Переносит длинные слова */
-    white-space: normal; /* Позволяет переносить текст */
+    word-wrap: break-word;
+    white-space: normal;
 }
 
 /* Ширина столбцов с минимальными размерами */
 th:nth-child(1), td:nth-child(1) {
-    min-width: 100px; /* Ширина для столбца ID Терминала */
+    min-width: 80px; /* Узкая ширина для ID */
 }
 
 th:nth-child(2), td:nth-child(2) {
-    min-width: 200px; /* Минимальная ширина для длинных данных */
+    min-width: 150px;
 }
 
 th:nth-child(3), td:nth-child(3),
 th:nth-child(4), td:nth-child(4),
 th:nth-child(5), td:nth-child(5) {
-    min-width: 130px; /* Ширина для статуса и дат */
+    min-width: 100px;
 }
 
 /* Заголовки таблицы */
 th {
     background-color: #f4f4f4;
     text-align: center;
+    font-size: 14px;
 }
 
 td {
     text-align: left;
+    font-size: 13px;
 }
 
 /* Перенос текста в дате */
 td:nth-child(4), td:nth-child(5) {
-    white-space: pre-wrap; /* Переносит даты на несколько строк */
+    white-space: pre-wrap;
 }
 
 /* Стили для пагинации */
 .pagination-container {
     display: flex;
     justify-content: center;
-    margin-top: 20px;
+    margin-top: 15px;
 }
 
 .pagination-container button {
-    padding: 5px 10px;
+    padding: 4px 8px; /* Компактные кнопки */
     background-color: #007BFF;
     color: white;
     border: none;
-    border-radius: 5px;
+    border-radius: 4px;
     cursor: pointer;
 }
 
@@ -184,20 +185,20 @@ td:nth-child(4), td:nth-child(5) {
     padding: 0;
     margin: 0;
     border: 1px solid #ddd;
-    max-height: 200px;
+    max-height: 150px;
     overflow-y: auto;
     position: absolute;
-    top: 100%; /* Расположим список прямо под кнопкой */
+    top: 100%;
     left: 0;
     background: white;
     width: 100%;
     z-index: 1000;
-    border-radius: 5px;
+    border-radius: 4px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .suggestions-list li {
-    padding: 10px;
+    padding: 8px;
     cursor: pointer;
 }
 
@@ -216,15 +217,15 @@ td:nth-child(4), td:nth-child(5) {
 /* Медиазапросы для мобильных устройств */
 @media (max-width: 768px) {
     .table-container, .form-container {
-        width: 100%; /* Растягиваем на всю ширину */
+        width: 100%;
     }
 
     th, td {
-        font-size: 14px; /* Уменьшаем шрифт для мобильных устройств */
+        font-size: 12px;
     }
 
     .btn {
-        padding: 8px 15px; /* Уменьшаем кнопки */
-        font-size: 14px;
+        padding: 6px 10px;
+        font-size: 12px;
     }
 }
