@@ -1,12 +1,11 @@
 /* Общий стиль */
 body {
     font-family: 'Roboto', sans-serif;
-    margin: 0 auto;
+    margin: 0;
     text-align: center;
     color: #333;
     background-color: #f5f5f5;
-    width: 1280px; /* Фиксируем ширину для ПК */
-    overflow-x: auto; /* Добавляем горизонтальную прокрутку для мобильных устройств */
+    overflow-x: hidden; /* Убираем горизонтальный скролл */
 }
 
 header {
@@ -77,7 +76,7 @@ header span {
 
 /* Формы */
 .form-container {
-    width: 80%;
+    width: 90%;
     max-width: 500px;
     margin: 0 auto 20px auto;
     padding: 20px;
@@ -92,7 +91,7 @@ header span {
 }
 
 input[type="text"], input[type="password"], input[type="datetime-local"], input[type="number"] {
-    width: calc(100% - 20px);
+    width: 100%;
     padding: 10px;
     font-size: 16px;
     margin-top: 10px;
@@ -107,8 +106,8 @@ input[type="checkbox"] {
 
 /* Таблицы */
 .table-container {
-    width: 1280px; /* Фиксируем ширину для таблицы */
-    max-width: 100%;
+    width: 100%;
+    max-width: 1000px;
     margin: 20px auto;
     overflow-x: auto;
     background-color: white; /* Фон таблицы белый */
@@ -119,55 +118,35 @@ input[type="checkbox"] {
 table {
     width: 100%;
     border-collapse: collapse;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 th, td {
-    padding: 15px;
+    padding: 10px;
     text-align: left;
     border: 1px solid #ddd;
-    white-space: normal; /* Позволяет переносить текст */
     word-wrap: break-word; /* Переносит длинные слова */
+    white-space: normal; /* Позволяет переносить текст */
 }
 
 /* Ширина столбцов с минимальными размерами */
 th:nth-child(1), td:nth-child(1) {
-    width: 25ch; /* Устанавливаем ширину для столбца ID Терминала */
-    min-width: 120px; /* Минимальная ширина для этого столбца */
+    min-width: 100px; /* Ширина для столбца ID Терминала */
 }
 
 th:nth-child(2), td:nth-child(2) {
-    width: 40%; /* Столбец с длинными данными */
-    min-width: 200px; /* Минимальная ширина для этого столбца */
+    min-width: 200px; /* Минимальная ширина для длинных данных */
 }
 
-th:nth-child(3), td:nth-child(3) {
-    width: 20%; /* Столбец Статус */
-    min-width: 100px; /* Минимальная ширина для этого столбца */
-}
-
-th:nth-child(4), td:nth-child(4) {
-    width: 20%; /* Столбец Дата создания */
-    min-width: 130px; /* Минимальная ширина для этого столбца */
-}
-
+th:nth-child(3), td:nth-child(3),
+th:nth-child(4), td:nth-child(4),
 th:nth-child(5), td:nth-child(5) {
-    width: 20%; /* Столбец с дополнительной датой */
-    min-width: 130px; /* Минимальная ширина для этого столбца */
+    min-width: 130px; /* Ширина для статуса и дат */
 }
 
 /* Заголовки таблицы */
 th {
     background-color: #f4f4f4;
-    font-weight: bold;
     text-align: center;
-}
-
-th, td {
-    padding: 15px;
-    text-align: left;
-    word-wrap: break-word;
-    white-space: normal;
 }
 
 td {
@@ -176,7 +155,6 @@ td {
 
 /* Перенос текста в дате */
 td:nth-child(4), td:nth-child(5) {
-    word-wrap: break-word;
     white-space: pre-wrap; /* Переносит даты на несколько строк */
 }
 
@@ -188,62 +166,19 @@ td:nth-child(4), td:nth-child(5) {
 }
 
 .pagination-container button {
-    padding: 5px 10px; /* Уменьшаем отступы для уменьшения ширины */
-    margin: 0 5px;
+    padding: 5px 10px;
     background-color: #007BFF;
     color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    position: relative;
-    top: -10px; /* Поднимаем кнопки */
-    width: auto; /* Ширина по содержимому */
 }
 
 .pagination-container button:hover {
     background-color: #0056b3;
 }
 
-/* Сообщения об ошибках */
-.error-message {
-    color: red;
-    font-weight: bold;
-    margin-top: 20px;
-}
-
-/* ID Терминала */
-#terminal-id-container {
-    display: flex;
-    align-items: center; /* Выравнивание по вертикали */
-    justify-content: flex-start;
-    gap: 15px; /* Расстояние между элементами */
-    margin-bottom: 20px;
-    position: relative; /* Чтобы списки выпадали относительно кнопки */
-}
-
-#terminal-id-container input {
-    width: 250px;
-    padding: 10px;
-    font-size: 16px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-}
-
-#terminal-id-container button {
-    padding: 10px 20px;
-    font-size: 16px;
-    background-color: #007BFF;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-#terminal-id-container button:hover {
-    background-color: #0056b3;
-}
-
+/* Выпадающий список */
 .suggestions-list {
     list-style: none;
     padding: 0;
@@ -252,7 +187,7 @@ td:nth-child(4), td:nth-child(5) {
     max-height: 200px;
     overflow-y: auto;
     position: absolute;
-    top: 100%;
+    top: 100%; /* Расположим список прямо под кнопкой */
     left: 0;
     background: white;
     width: 100%;
@@ -264,12 +199,10 @@ td:nth-child(4), td:nth-child(5) {
 .suggestions-list li {
     padding: 10px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
 }
 
 .suggestions-list li:hover {
     background-color: #f0f0f0;
-    color: #000;
 }
 
 .suggestions-list li.green {
@@ -278,4 +211,20 @@ td:nth-child(4), td:nth-child(5) {
 
 .suggestions-list li.red {
     color: red;
+}
+
+/* Медиазапросы для мобильных устройств */
+@media (max-width: 768px) {
+    .table-container, .form-container {
+        width: 100%; /* Растягиваем на всю ширину */
+    }
+
+    th, td {
+        font-size: 14px; /* Уменьшаем шрифт для мобильных устройств */
+    }
+
+    .btn {
+        padding: 8px 15px; /* Уменьшаем кнопки */
+        font-size: 14px;
+    }
 }
