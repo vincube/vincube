@@ -1,0 +1,313 @@
+/* Общий стиль */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    text-align: center;
+    color: #333;
+    background-color: #f5f5f5;
+}
+
+header {
+    padding: 15px 20px;
+    background-color: #007BFF;
+    color: white;
+    display: flex;
+    justify-content: flex-end; /* Выравнивание содержимого по правому краю */
+    align-items: center;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Отступ между элементами */
+}
+
+header span {
+    font-size: 18px;
+    font-weight: bold;
+    margin-right: 10px; /* Дополнительный отступ справа */
+}
+
+.btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn-primary {
+    background-color: #007BFF;
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+.btn-secondary {
+    background-color: #6c757d;
+    color: white;
+}
+
+.btn-secondary:hover {
+    background-color: #5a6268;
+}
+
+/* Навигация */
+.navbar {
+    margin-bottom: 20px;
+    background-color: #333;
+    padding: 10px;
+}
+
+.nav-btn {
+    background-color: transparent;
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.nav-btn:hover {
+    text-decoration: underline;
+}
+
+/* Формы */
+.form-container {
+    width: 80%;
+    max-width: 500px;
+    margin: 0 auto 20px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+input[type="text"], input[type="password"], input[type="datetime-local"], input[type="number"] {
+    width: calc(100% - 20px);
+    padding: 10px;
+    font-size: 16px;
+    margin-top: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+input[type="checkbox"] {
+    transform: scale(1.5);
+    margin-right: 10px;
+}
+
+/* Таблицы */
+/* Таблицы */
+.table-container {
+    width: 90%;
+    max-width: 1000px;
+    margin: 20px auto;
+    overflow-x: auto;
+    background-color: white; /* Фон таблицы белый */
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+th, td {
+    padding: 15px;
+    text-align: left;
+    border: 1px solid #ddd;
+    white-space: normal; /* Позволяет переносить текст */
+    word-wrap: break-word; /* Переносит длинные слова */
+}
+
+
+/* Ширина столбцов с минимальными размерами */
+th:nth-child(1), td:nth-child(1) {
+    width: 25ch; /* Устанавливаем ширину для столбца ID Терминала */
+    min-width: 120px; /* Минимальная ширина для этого столбца */
+}
+
+th:nth-child(2), td:nth-child(2) {
+    width: 40%; /* Столбец с длинными данными */
+    min-width: 200px; /* Минимальная ширина для этого столбца */
+}
+
+th:nth-child(3), td:nth-child(3) {
+    width: 20%; /* Столбец Статус */
+    min-width: 100px; /* Минимальная ширина для этого столбца */
+}
+
+th:nth-child(4), td:nth-child(4) {
+    width: 20%; /* Столбец Дата создания */
+    min-width: 130px; /* Минимальная ширина для этого столбца */
+}
+
+th:nth-child(5), td:nth-child(5) {
+    width: 20%; /* Столбец с дополнительной датой */
+    min-width: 130px; /* Минимальная ширина для этого столбца */
+}
+
+
+/* Заголовки таблицы */
+th {
+    background-color: #f4f4f4;
+    font-weight: bold;
+    text-align: center;
+}
+
+th, td {
+    padding: 15px;
+    text-align: left;
+    word-wrap: break-word;
+    white-space: normal;
+}
+
+td {
+    text-align: left;
+}
+
+/* Перенос текста в дате */
+td:nth-child(4), td:nth-child(5) {
+    word-wrap: break-word;
+    white-space: pre-wrap; /* Переносит даты на несколько строк */
+}
+
+/* Стили для пагинации */
+.pagination-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+/* Кнопки пагинации (вперед/назад) */
+.pagination-container button {
+    padding: 5px 10px; /* Уменьшаем отступы для уменьшения ширины */
+    margin: 0 5px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    position: relative; /* Добавляем позиционирование */
+    top: -10px; /* Поднимаем кнопки на 5px */
+    width: auto; /* Ширина по содержимому */
+}
+
+.pagination-container button:hover {
+    background-color: #0056b3;
+}
+
+
+/* Пагинация */
+.pagination-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.pagination-container button {
+    padding: 10px;
+    margin: 0 5px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.pagination-container button:hover {
+    background-color: #0056b3;
+}
+
+/* Сообщения об ошибках */
+.error-message {
+    color: red;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+#terminal-id-container {
+    display: flex;
+    align-items: center; /* Выравнивание по вертикали */
+    justify-content: flex-start;
+    gap: 15px; /* Расстояние между элементами */
+    margin-bottom: 20px;
+    position: relative; /* Чтобы списки выпадали относительно кнопки */
+}
+
+/* Стиль для ID Терминала: и поля ввода */
+#terminal-id-container label {
+    font-size: 16px;
+    margin-right: 10px; /* Отступ справа */
+}
+
+#terminal-id-container input {
+    width: 250px; /* Устанавливаем ширину поля */
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+	margin-top: 0mm; 
+}
+
+/* Кнопка для выбора ID Терминала */
+#terminal-id-container button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 0mm; /* Добавляем отступ сверху для кнопки */
+}
+
+#terminal-id-container button:hover {
+    background-color: #0056b3;
+}
+
+/* Выпадающий список теперь будет под кнопкой */
+.suggestions-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    border: 1px solid #ddd;
+    max-height: 200px;
+    overflow-y: auto;
+    position: absolute;
+    top: 100%; /* Расположим список прямо под кнопкой */
+    left: 0; /* Устанавливаем в начало контейнера */
+    background: white;
+    width: 100%;
+    z-index: 1000;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.suggestions-list li {
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.suggestions-list li:hover {
+    background-color: #f0f0f0;
+    color: #000;
+}
+
+.suggestions-list li.green {
+    color: green;
+}
+
+.suggestions-list li.red {
+    color: red;

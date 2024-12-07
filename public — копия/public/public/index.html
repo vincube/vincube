@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Просмотр данных API</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <span id="page-title"></span>
+        <button id="logout-button" style="display: none;" onclick="logout()">Выход</button>
+    </header>
+    <nav>
+        <button onclick="switchPage('main')">Главная</button>
+        <button onclick="switchPage('terminals')">Terminals</button>
+        <button onclick="switchPage('login')">Login</button>
+    </nav>
+
+    <main>
+        <!-- Главная страница -->
+        <section id="main-page" style="display: none;">
+            <h1>Главная страница</h1>
+            <form id="api-params">
+                <label>ID Терминала: 
+                    <div id="terminal-id-container">
+                        <input type="text" id="terminal_id" placeholder="Введите ID" oninput="filterTerminals()" autocomplete="off">
+                        <button type="button" onclick="showAllTerminals()" aria-label="Показать список">▼</button>
+                        <ul id="terminal-suggestions" style="display: none;" role="listbox" aria-live="polite"></ul>
+                    </div>
+                </label>
+                <br><br>
+                <label>Токен: <input type="text" id="token" value="" readonly></label><br><br>
+                <label>Дата начала: <input type="datetime-local" id="date_from"></label><br><br>
+                <label>Дата окончания: <input type="datetime-local" id="date_to"></label><br><br>
+                <label>Количество записей на странице: <input type="number" id="items_on_page" value="10"></label><br><br>
+                <label>Текстовый фильтр: <input type="text" id="filter_text" oninput="fetchData()"></label><br><br>
+                <button type="button" onclick="fetchData()">Отправить запрос</button>
+            </form>
+            <div id="data-table"></div>
+            <div id="pagination"></div>
+        </section>
+
+        <!-- Страница Terminals -->
+        <section id="terminals-page" style="display: none;">
+            <h1>Terminals</h1>
+            <form id="terminals-params">
+                <label>Токен: <input type="text" id="terminals-token" value="" readonly></label><br><br>
+                <label>Количество записей на странице: <input type="number" id="terminals-items-on-page" value="10"></label><br><br>
+                <label>Текстовый фильтр: <input type="text" id="terminals-filter-text" oninput="fetchTerminalsData()"></label><br><br>
+                <button type="button" onclick="fetchTerminalsData()">Отправить запрос</button>
+            </form>
+            <div id="terminals-table"></div>
+            <div id="terminals-pagination"></div>
+        </section>
+
+        <!-- Страница Login -->
+        <section id="login-page">
+            <h1>Вход в личный кабинет</h1>
+            <form id="login-form">
+                <label>Логин: <input type="text" id="login-username" placeholder="Введите логин" required></label><br><br>
+                <label>Пароль: <input type="password" id="login-password" placeholder="Введите пароль" required></label><br><br>
+                <label>
+                    <input type="checkbox" id="remember-me"> Запомнить меня
+                </label>
+                <br><br>
+                <button type="button" onclick="performLogin()">Войти</button>
+            </form>
+            <div id="login-result" style="margin-top: 20px; color: red;"></div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
